@@ -1,6 +1,8 @@
 #!/bin/sh
 
-sudo cp -rf app.conf /etc/nginx/conf.d
+sudo cp -rf app.conf /etc/nginx/sites-available
+sudo ln -s /etc/nginx/sites-available/app.conf /etc/nginx/sites-enabled
+
 
 # sudo usermod -a -G centos nginx
 
