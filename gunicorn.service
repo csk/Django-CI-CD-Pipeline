@@ -3,7 +3,7 @@ Description=gunicorn daemon
 After=network.target
 
 [Service]
-User=www-data
+User=jenkins
 Group=www-data
 WorkingDirectory=/var/lib/jenkins/workspace/DjangoApp
 ExecStart=/var/lib/jenkins/workspace/DjangoApp/env/bin/gunicorn --workers 3 --log-level debug --error-logfile /var/lib/jenkins/workspace/DjangoApp/error.log --bind unix:/var/lib/jenkins/workspace/DjangoApp/app.sock DjangoApp.wsgi:application
